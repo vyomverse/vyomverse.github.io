@@ -99,20 +99,7 @@ window.DemoUtils = {
    */
   createCubeScene() {
     const scene = new THREE.Scene();
-
-    
     const KTexture = new THREE.TextureLoader().load('../intro/logo-2.jpg');
-
-
-    const materials = [
-      new THREE.MeshBasicMaterial({ color: 0xff0000 }),
-      new THREE.MeshBasicMaterial({ color: 0x0000ff }),
-      new THREE.MeshBasicMaterial({ color: 0x00ff00 }),
-      new THREE.MeshBasicMaterial({ color: 0xff00ff }),
-      new THREE.MeshBasicMaterial({ color: 0x00ffff }),
-      new THREE.MeshBasicMaterial({ color: 0xffff00 })
-    ];
-
     const ROW_COUNT = 4;
     const SPREAD = 1;
     const HALF = ROW_COUNT / 2;
@@ -120,7 +107,7 @@ window.DemoUtils = {
       for (let j = 0; j < ROW_COUNT; j++) {
         for (let k = 0; k < ROW_COUNT; k++) {
           const box = new THREE.Mesh(
-          new THREE.BoxGeometry(5,5,5),
+          new THREE.BoxGeometry(0.2, 0.2, 0.2),
           new THREE.MeshBasicMaterial({map : KTexture})
         );
           box.position.set(i - HALF, j - HALF, k - HALF);
